@@ -1,0 +1,24 @@
+<div class="restaurant-details mb-3 pt-3">
+<h1><%= @restaurant.name %></h1>
+<h4><%= @restaurant.address %></h4>
+<h4><%= @restaurant.category.capitalize %> Cuisine</h4>
+<h4><%= @restaurant.phone_number %></h4>
+</div>
+
+<div class="reviews card mb-3 p-3 bg-light">
+  <h3>Reviews</h3>
+  <% if @restaurant.reviews.length == 0 %>
+  <div class="review-item">There are no reviews for <%= @restaurant.name %> yet...</div>
+  <% end %>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="review-item">
+      <p><%= review.rating %>/5 - <%= review.content %></p>
+    </div>
+  <% end %>
+</div>
+<div class="review-form card p-3 bg-light mb-3">
+<h3>Leave your review</h3>
+<%= render "/reviews/form", restaurant: @restaurant, review: @review %>
+</div>
+
+<%= link_to "Back", restaurants_path %>

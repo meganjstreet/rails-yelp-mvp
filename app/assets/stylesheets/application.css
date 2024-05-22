@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  text-align: center
+}
+
+a {
+  text-decoration: none;
+  font-size: larger;
+}
+
+li:hover {
+  background-color: #F8F9FA;
+}
+
+.reviews h3 {
+  text-align: center;
+}
+
+
+.review-form h3 {
+  text-align: center;
+}
